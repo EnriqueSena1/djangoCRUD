@@ -1,9 +1,9 @@
 from rest_framework import serializers
 
-from .models import Aluno
+from .models import *
 
-class AlunoSerializer(serializers.ModelSerializer):
+class UserSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Aluno
+        model = CustomUser
         fields = '__all__'
     
