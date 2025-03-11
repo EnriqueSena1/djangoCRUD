@@ -11,6 +11,7 @@ router = DefaultRouter()
 
 urlpatterns = [
     path('api/', include(router.urls)),
+    path('api/login', Login.as_view(), name="loginAPI"),
     path('home/', home, name="home"),
     path('login/', login, name="login"),
     path('criarAluno/', criarAluno, name="criarAluno"),
