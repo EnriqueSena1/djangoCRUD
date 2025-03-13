@@ -4,17 +4,17 @@
         <tr>
             <td>ID</td>
             <td>Nome</td>
-            <td>Email</td>
+            <td>senha</td>
             <td>Ações</td>
         </tr>
     </thead>
 
     <tbody>
-    {% for i in aluno%}
+    {% for i in usuarios%}
     <tr id="aluno-{{i.id}}">
     <td > {{i.id}} </td>
-    <td> {{i.nome}} </td>
-    <td> {{i.email}} </td>
+    <td> {{i.username}} </td>
+    <td> {{i.password}} </td>
     <td>
         <button class="btn btn-danger" onclick="deletar({{i.id}})">Deletar</button>
         <button class="btn btn-primary">Editar</button>
