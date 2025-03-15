@@ -17,6 +17,7 @@ urlpatterns = [
     path('home/', home, name="home"),
     path('login/', login, name="login"),
     path('criarAluno/', criarAluno, name="criarAluno"),
+    path('criarAluno/<int:id>', criarAluno, name="criarAlunoEdicao"),
 
     # path('funcionarios/', listarFuncionarios, name='listarFuncionarios'),
     # path('funcionarios/cadastrar', cadastrarFuncionario, name='cadastrarFuncionario'),

@@ -1,25 +1,18 @@
 async function enviarFormulario(evento){
     evento.preventDefault()
     
-    var nome = document.getElementById('nome').value
-    var email = document.getElementById('email').value
-    var msg = document.getElementById('msg')
+    const nome = document.getElementById("nome").value
+    const senha = document.getElementById("senha").value
+    const csrf = document.querySelector("[name=csrfmiddlewaretoken]").value
 
-    const resposta = await fetch('/api/alunos/', {
-        method: 'POST',
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify({nome: nome, email: email})
-    })
+   const resposta = await apiFetch("/api/user", "POST", {nome: nome, senha: senha}, {"X-CSRFToken": csrf} )
 
-    if(resposta.ok){
-        window.location.href = "/home"
-    }
-    else{
-        msg.innerHTML = 'Erro ao cadastrar'
-    }
+   console.log(resposta)
 
+   if (resposta){
+    window.location.href = "/home"
+    
+   }
 
 }
 
